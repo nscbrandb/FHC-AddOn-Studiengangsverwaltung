@@ -21,7 +21,7 @@ if(!$berechtigung->isBerechtigt("addon/studiengangsverwaltung",null,"suid"))
 $stg_kz_array = $berechtigung->getStgKz("addon/studiengangsverwaltung");
 
 $studiengang = new studiengang();
-$studiengang->loadArray($stg_kz_array, "kurzbzlang", true);
+$studiengang->loadArray($stg_kz_array, "typ,kurzbz", true);
 
 $stg_array = array();
 
@@ -40,7 +40,7 @@ foreach($studiengang->result as $key=>$stg)
     $temp->kurzbzlang = $stg->kurzbzlang;
     //TODO Stg Bezeichnung von jüngster aktiven STO holen
     $temp->bezeichnung = $stg->bezeichnung;
-    $temp->text = $stg->kurzbzlang." - ".$stg->bezeichnung;
+    $temp->text = strtoupper($stg->typ.$stg->kurzbz)." - ".$stg->bezeichnung;
     if($key == 0 && $DEBUG)
 	$temp->state = "open";
     else
