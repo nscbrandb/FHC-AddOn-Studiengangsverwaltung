@@ -166,7 +166,8 @@ angular.module('stgv2')
 						{field: 'benotung',align: 'center', /*editor: {type: 'checkbox'},*/ title:'Bewertung', formatter: booleanToIconFormatter},
 						{field: 'zeugnis',align: 'center', /*editor: {type: 'checkbox'},*/ title:'Zeugnis', formatter: booleanToIconFormatter},
 						{field: 'lehrauftrag',align: 'center', /*editor: {type: 'checkbox'},*/ title:'Lehrauftrag', formatter: booleanToIconFormatter},
-						{field: 'lvnr',align: 'right', title:'LVNR'}
+						{field: 'lvnr',align: 'right', title:'LVNR'},
+						{field: 'lehrveranstaltung_id',align: 'right', title:'LVID'}
 						//{field: 'curriculum',align: 'center', /*editor: {type: 'checkbox'},*/ title:'Studienplan', formatter: booleanToIconFormatter}
 					]],
 					onContextMenu: function(e ,row)
