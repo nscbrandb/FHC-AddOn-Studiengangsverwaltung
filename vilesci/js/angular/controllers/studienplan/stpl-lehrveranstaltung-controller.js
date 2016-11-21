@@ -741,6 +741,8 @@ angular.module('stgv2')
 					{field: 'ects', align:'right', sortable: true, title:'ECTS'},
 					{field: 'lehrform_kurzbz', align:'right', sortable: true, title:'Lehrform'},
 					{field: 'semesterstunden', align:'right', sortable: true, title:'SS'},
+					{field: 'semesterstunden', align:'right', sortable: true, title:'SS'},
+					{field: 'orgform_kurzbz', align:'right', sortable: true, title:'OF'},
 				]]
 			});
 
@@ -778,6 +780,7 @@ angular.module('stgv2')
 						{field: 'ects', align:'right', sortable: true, title:'ECTS'},
 						{field: 'lehrform_kurzbz', align:'right', sortable: true, title:'Lehrform'},
 						{field: 'semesterstunden', align:'right', sortable: true, title:'SS'},
+						{field: 'orgform_kurzbz', align:'right', sortable: true, title:'OF'},
 					]],
 					loadFilter: function (data)
 					{
