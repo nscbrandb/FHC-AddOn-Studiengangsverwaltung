@@ -47,7 +47,7 @@ $lehrveranstaltung->loadLehrveranstaltungStudienplan($studienplan_id);
 
 if($parent_id == null)
 {
-    for($i=1; $i <= $studienplan->regelstudiendauer; $i++)
+    for($i=0; $i <= $studienplan->regelstudiendauer; $i++)
     {
         $node = new stdClass();
         $node->id = $i.'_sem';
