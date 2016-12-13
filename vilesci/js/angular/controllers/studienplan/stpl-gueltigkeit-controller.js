@@ -50,7 +50,7 @@ angular.module('stgv2')
 			ctrl.range = function (max)
 			{
 				var values = [];
-				for (i = 1; i <= max; i++)
+				for (i = 0; i <= max; i++)
 				{
 					values.push(i);
 				}
