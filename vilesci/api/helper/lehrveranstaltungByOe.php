@@ -44,7 +44,7 @@ elseif(is_null($studiengang_kz))
 {
     returnAJAX(false, "Variable studiengang_kz nicht gesetzt");
 }
-elseif($oe_kurzbz === false || $lehrtyp_kurzbz === false || $semester === false || $studiengang_kz == false)
+elseif($oe_kurzbz === false || $lehrtyp_kurzbz === false || $semester === false || $studiengang_kz === false)
 {
     returnAJAX(false, "Fehler beim lesen der GET Variablen");
 }
