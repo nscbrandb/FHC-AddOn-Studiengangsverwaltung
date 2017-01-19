@@ -153,12 +153,14 @@ angular.module('stgv2')
 						{field: 'orgform_kurzbz', width:'60', title:'OrgForm'},
 						{field: 'ects',align: 'right', title:'ECTS'},
 						{field: 'sws', align: 'right', title:'SWS'},
+						{field: 'semesterstunden', align: 'right', title:'SS'},
 						{field: 'lvs', align: 'right', title:'LVS'},
 						{field: 'alvs', align: 'right', title:'ALVS'},
 						{field: 'las', align: 'right', title:'LAS'},
 						{field: 'lvps', align: 'right', title:'LVPLS'},
 						{field: 'lehrform_kurzbz',width:'60', align: 'right', title:'Lehrform'},
-						{field: 'export',align: 'center', /*editor: {type: 'checkbox'},*/ title:'StudPlan', formatter: booleanToIconFormatter},
+						//{field: 'export',align: 'center', /*editor: {type: 'checkbox'},*/ title:'StudPlan', formatter: booleanToIconFormatter},
+						{field: 'curriculum',align: 'center', /*editor: {type: 'checkbox'},*/ title:'Studienplan', formatter: booleanToIconFormatter},
 						{field: 'stpllv_pflicht',align: 'center', title:'Pflicht', formatter: booleanToIconFormatter},
 						{field: 'genehmigung',align: 'center', title:'Gen', formatter: booleanToIconFormatter},
 						{field: 'lehre',align: 'center', /*editor: {type: 'checkbox'},*/ title:'Lehre/CIS', formatter: booleanToIconFormatter},
@@ -168,7 +170,7 @@ angular.module('stgv2')
 						{field: 'lehrauftrag',align: 'center', /*editor: {type: 'checkbox'},*/ title:'Lehrauftrag', formatter: booleanToIconFormatter},
 						{field: 'lvnr',align: 'right', title:'LVNR'},
 						{field: 'lehrveranstaltung_id',align: 'right', title:'LVID'}
-						//{field: 'curriculum',align: 'center', /*editor: {type: 'checkbox'},*/ title:'Studienplan', formatter: booleanToIconFormatter}
+
 					]],
 					onContextMenu: function(e ,row)
 					{
@@ -288,7 +290,7 @@ angular.module('stgv2')
 					onBeforeEdit: function(row)
 					{
 						var benotung = $(this).treegrid('getColumnOption','benotung');
-//						var curriculum = $(this).treegrid('getColumnOption','curriculum');
+						var curriculum = $(this).treegrid('getColumnOption','curriculum');
 						var exportCol = $(this).treegrid('getColumnOption','export');
 						var zeugnis = $(this).treegrid('getColumnOption','zeugnis');
 						var lvinfo = $(this).treegrid('getColumnOption','lvinfo');
@@ -312,7 +314,7 @@ angular.module('stgv2')
 						{
 							var parent = $(this).treegrid('getParent',row.id);
 							benotung.editor = {type: "checkbox"};
-							//curriculum.editor = {type: "checkbox"};
+							curriculum.editor = {type: "checkbox"};
 							exportCol.editor = {type: "checkbox"};
 							zeugnis.editor = {type: "checkbox"};
 							lvinfo.editor = {type: "checkbox"};
@@ -328,7 +330,7 @@ angular.module('stgv2')
 						var parent = $("#stplTreeGrid").treegrid('getParent', lv.id);
 
 						var benotung = $(this).treegrid('getColumnOption','benotung');
-//						var curriculum = $(this).treegrid('getColumnOption','curriculum');
+						var curriculum = $(this).treegrid('getColumnOption','curriculum');
 						var exportCol = $(this).treegrid('getColumnOption','export');
 						var zeugnis = $(this).treegrid('getColumnOption','zeugnis');
 						var lvinfo = $(this).treegrid('getColumnOption','lvinfo');
@@ -338,7 +340,7 @@ angular.module('stgv2')
 						var genehmigung = $(this).treegrid('getColumnOption','genehmigung');
 
 						benotung.editor = null;
-//						curriculum.editor = null;
+						curriculum.editor = null;
 						exportCol.editor = null;
 						zeugnis.editor = null;
 						lvinfo.editor = null;
